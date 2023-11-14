@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			anas += write(1, format, 1);
+			write(1, format, 1);
 			anas++;
 		}
 		format++;
