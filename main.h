@@ -22,6 +22,7 @@ int mustafa_o(unsigned int n);
 int mustafa_x(unsigned int n);
 int mustafa_X(unsigned int n);
 
+int print_int(int n);
 
 #endif /* MAIN_H */
 

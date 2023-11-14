@@ -8,8 +8,9 @@ int mustafa_b(int n)
 {
 	int anas = 0;
 	int mami = 1;
+	int i;
 
-	for (int i = 31; i >= 0; i--)
+	for (i = 31; i >= 0; i--)
 	{
 		char bit = (n >> i) & 1;
 
@@ -32,7 +33,7 @@ int mustafa_b(int n)
 	{
 		char zerChar = '0';
 
-		if (write(1, zerChar, 1) != 1)
+		if (write(1, &zerChar, 1) != 1)
 		{
 			return (-1);
 		}
