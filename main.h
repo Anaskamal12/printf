@@ -16,5 +16,6 @@ int mustafa_R(char *str);
 int mustafa_r(char *str);
 int mustafa_chars(va_list mo, const char *format);
 
+
 #endif /* MAIN_H */
 
