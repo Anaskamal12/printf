@@ -4,7 +4,7 @@
  * @format: format
  * Return: anas
  */
-int mustafa_chars(va_list mo , const char *format)
+int _printf(const char *format, ...)
 {
 	int anas = 0;
 	va_list mo;
@@ -40,6 +40,7 @@ int mustafa_chars(va_list mo , const char *format)
 		else
 		{
 			anas += write(1, format, 1);
+			anas++;
 		}
 		format++;
 	}
