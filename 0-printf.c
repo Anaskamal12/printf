@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'r')
 			{
-				anas += mustafa_chars(mo, format - 1);
+				anas += mustafa_chars(mo, format);
 			}
 		}
 		else
