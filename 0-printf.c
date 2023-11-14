@@ -12,33 +12,33 @@ int _printf(const char *format, ...)
 	int anas = 0;
 	va_list mo;
 
-	if (format == NULL)
-		return (-1);
 	va_start(mo, format);
-	while (*format)
+
+	while (*format != '\0')
 	{
-		if (*format != '%' || (*(format + 1) == '%' && (format++, 1)))
+		if (*format == '%')
+		{
+			format++;
+			if (*format == 'd' || *format == 'i')
+			{
+				anas += mustafa_d(va_arg(mo, int));
+			}
+			else if (*format == 'b')
+			{
+				anas += mustafa_b(va_arg(mo, int));
+			}
+			else if (*format == 'R')
+			{
+				anas += mustafa_R(va_arg(mo, char *));
+			}
+			else if (*format == 'r')
+			{
+				anas += mustafa_chars(mo, format - 1);
+			}
+		}
+		else
 		{
 			anas += write(1, format, 1);
-		}
-		else if (*(format + 1) == 'c')
-		{
-			char c = va_arg(mo, int);
-
-			anas += write(1, &c, 1);
-			format++;
-		}
-		else if (*(format + 1) == 's')
-		{
-			char *str = va_arg(mo, char*);
-
-			anas += write(1, str, strlen(str));
-			format++;
-		}
-		else if (*(format + 1) == '%')
-		{
-			anas += write(1, "%", 1);
-			format++;
 		}
 		format++;
 	}
